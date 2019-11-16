@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		home
+	</title>
+		 <meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  		  <style type="text/css">
+  		  	* {
+				  box-sizing: border-box;
+				}
+
+
+  		  	.modal-dialog{
+  		  		margin-top: 50px;
+  		  		
+  		  		
+  		  	}
+
+  		  	.modal-content{
+  		  		background-color: hsla(0, 100%, 30%, 0.1);
+  		  		border-radius: 25px;
+  		  		box-shadow: 10px 10px grey;
+
+  		  	}
+
+  		  	.output {
+				  background-color: #f1f1f1;
+				  padding: 10px;
+				  text-align: center;
+				  width: 600px;
+				  margin-left: 470px;
+				}
+
+			h4 {
+			  	font-family: "Times New Roman", Times, serif;
+			  	text-align: center;
+			}
+
+			body{
+				background-color: 	rgb(51, 64, 77);
+
+
+			}
+			h1 {
+
+				padding-top: 25px;
+				padding-bottom: 25px;
+			  text-align: center;
+			  text-transform: uppercase;
+			  color: #4CAF50;
+			  background-color: white;
+			}
+			input[type=submit] {
+			  background-color: #4CAF50;
+			  color: white;
+			  padding: 12px 20px;
+			  border: none;
+			  border-radius: 10px;
+			  cursor: pointer;
+			  float: right;
+			}
+
+			p {
+			  text-indent: 50px;
+			  text-align: justify;
+			  letter-spacing: 3px;
+			}
+			.footer {
+			  margin-top: 50px;
+			  height:250px;
+			  background-color: #0099cc;
+			  color: #ffffff;
+			  text-align: center;
+			  font-size: 12px;
+			  padding: 15px;
+			}
+			@media only screen and (max-width: 768px) {
+			  /* For mobile phones: */
+			  .output {
+			    width: 100%;
+			  }
+			}
+
+  		  </style>
+
+  		</head>
+<body>
+		<h1>SNAP IT AND HEAR IT!</h1>
+
+		<!-- The Modal -->
+	
+	  <div class="modal-dialog">
+	    <div class="modal-content" >
+
+	      <!-- Modal Header -->
+	      <div class="modal-header">
+	        <h4 class="modal-title" style ="color:DodgerBlue;" >We read for you</h4>
+	      </div>
+
+	      <!-- Modal body -->
+	      <div class="modal-body">
+
+			<form action="http://localhost:5000/" method = "POST" enctype = "multipart/form-data">
+			    <p style ="color:DodgerBlue;" >Upload your file </p>
+			    <div class="custom-file mb-3">
+			      <input type="file"  name="file" class="custom-file-input" required >
+			      <label name ="file " class="custom-file-label" for="customFile">Choose file</label>
+			      
+			    </div>
+			
+	      </div>
+	     <!-- Modal footer -->
+      <div class="modal-footer">
+      	<input type="submit" class="btn btn-danger"" >
+      </div>
+      </form>
+    </div>
+  </div>
+
+  	<div class="output">
+  		<p> Get the Output Here!</p>
+  		<p style ="color:DodgerBlue;">{{ temp }} </p>
+			<br>
+			{% if audio_filename %}
+				<audio controls="controls" src="/{{ audio_filename }}"></audio>
+			{% endif %}
+  	</div>
+  	<div class="footer">
+  		<h4 style="color: white;">ABOUT </h4>
+  <p>Scan it and Hear it takes an image file as an input type and produces the audio file and text as an output extracted from the image.</p>
+  <p>This helps users of both usual and visually impaired to read a document. Users can use the extracted text for data entries to reduce time consumption in typing manually. 
+  The technologies used in Snap it and Hear it is Python , Flask Web Development , HTML , CSS</p>
+  <h4>DESIGNED AND DEVELOPED BY</h4>
+  <p style="color: black; text-align: center;">KH BARSHA SINGHA <br>
+  	PONDICHERRY UNIVERSITY, MCA 3rd Year
+  </p>
+</div>
+
+
+</body>
+</html>
